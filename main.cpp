@@ -41,7 +41,7 @@ int main()
 
 
 
-   Menu<Complex> editmenu(complexVector, &Complex::edit, &Complex::name);
+   Menu<Complex> editmenu(complexVector, &Complex::edit, Complex::get_the_name());
    editmenu.run();
 
 

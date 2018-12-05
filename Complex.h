@@ -9,10 +9,10 @@ class Complex{
 private:
     int real;
     int imaginary;
-public:
     std::string name;
+public:
     friend class ComplexClass;
-    class Menu_option;
+    template <typename T> friend class Menu;
     typedef void (Complex::*menu_option_handler)(void);
     Complex(int r=0, int i=0, const std::string& n = std::string());
     Complex(const Complex &c);
@@ -21,6 +21,7 @@ public:
     void edit();
     void editReal();
     void editImaginary();
+    static Menu<Complex>::menu_option_member get_the_name();
 
 
 };

@@ -81,6 +81,12 @@ void Complex::editImaginary()
 
 
 
+Menu<Complex>::menu_option_member Complex::get_the_name()
+{
+    return &Complex::name;
+}
+
+
 //std::vector<Complex*>& Complex::sortByReal(std::vector<Complex>& vec)
 //{
 //    bool cont, push, changes;
