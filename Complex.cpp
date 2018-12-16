@@ -42,9 +42,10 @@ const std::string Complex::getcomplex()const
 void Complex::edit()
 {
     std::vector<Menu<Complex>::Menu_option> options;
-    options.push_back(Menu<Complex>::Menu_option('1', &Complex::editReal, "Edit Real Part", this));
-    options.push_back(Menu<Complex>::Menu_option('2', &Complex::editImaginary, "Edit Imaginary Part", this));
-    Menu<Complex> menu(options, 'q', "EDIT");
+    options.push_back(Menu<Complex>::Menu_option(1, &Complex::editReal, "Edit Real Part", this));
+    options.push_back(Menu<Complex>::Menu_option(2, &Complex::editImaginary, "Edit Imaginary Part", this));
+    options.push_back(Menu<Complex>::Menu_option(3, &Complex::editName , "Edit Name", this));
+    Menu<Complex> menu(options, "nothing");
     menu.run();
 }
 
@@ -77,6 +78,22 @@ void Complex::editImaginary()
        //std::istringstream(buffer)>>imaginary;
     }while(!std::cin.good());
     this->imaginary=imaginary;
+}
+
+
+
+void Complex::editName()
+{
+    //std::string buffer;
+    std::string name;
+    do {
+       std::cout<<"Enter the new imaginary part or \'q\' to cancel: ";
+       std::cin.clear();
+       std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+       std::cin>>std::ws>>name;
+       //std::istringstream(buffer)>>imaginary;
+    }while(!std::cin.good());
+    this->name=name;
 }
 
 

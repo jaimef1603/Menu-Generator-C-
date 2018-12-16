@@ -21,6 +21,7 @@ public:
     void edit();
     void editReal();
     void editImaginary();
+    void editName();
     static Menu<Complex>::menu_option_member get_the_name();
 
 
